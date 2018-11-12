@@ -30,14 +30,33 @@ it('shows AddPost Component', () => {
 
 });
 
-it('input element does exist', () => {
-    let obj = wrapper.find(AddPost).find('input').simulate('change', {
-        target: {
-            value: 'adding new text'
-        }
+describe('Input element', () => {
+
+    beforeEach(() => {
+        wrapper.find(AddPost).find('input').simulate('change', {
+            target: {
+                value: 'adding new text'
+            }
+        });
+        wrapper.update();
     })
-    expect(wrapper.find(AddPost).find('input').simulate('change'))
-})
+
+
+    it('input element does exist and text appear onChange', () => {
+
+        expect(wrapper.find(AddPost).find('input').prop('value')).toEqual('adding new text');
+    });
+
+    it('input text clear after submit', () => {
+
+        wrapper.find(AddPost).find('form').simulate('submit');
+        wrapper.update();
+        expect(wrapper.find(AddPost).find('input').prop('value')).toEqual('')
+
+    });
+
+});
+
 
 afterEach(() => {
     wrapper.unmount();

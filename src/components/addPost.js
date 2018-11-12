@@ -21,7 +21,7 @@ class AddPost extends Component {
 
     onSubmit(value) {
         this.props.addNewTask(value);
-        value.title = null;
+        value.title = "";
     }
 
     render() {

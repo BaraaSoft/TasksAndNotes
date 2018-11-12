@@ -6,15 +6,15 @@ class ListPosts extends Component {
     listTasks(tasksList) {
         return tasksList.map((task) => {
             return (
-                <div class="col s12 m7">
-                    <div class="card horizontal">
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <span class="card-title">{task.title}</span>
-                                <hr style={{ border: '1px solid rgba(230, 227, 227, 0.39)', 'margin-bottom': '16px', height: '0px' }} />
+                <div key={task.title} className="col s12 m7">
+                    <div className="card horizontal">
+                        <div className="card-stacked">
+                            <div className="card-content">
+                                <span className="card-title">{task.title}</span>
+                                <hr style={{ border: '1px solid rgba(230, 227, 227, 0.39)', 'marginBottom': '16px', height: '0px' }} />
                                 <p>{task.content}</p>
                             </div>
-                            <div class="card-action">
+                            <div className="card-action">
                                 <a className="activator" href="#">Edit</a>
                             </div>
                         </div>
