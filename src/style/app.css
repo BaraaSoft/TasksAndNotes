@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: #fff;
+    color:#555;
+    font-family: 'Lato','Arial',sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/*****************************************/
+/**************   reusable  ****************/
+/*****************************************/
+
+section{
+    padding: 80px 0;
+}
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.box{
+    padding: 1%;
+}
+
+.clearfix{
+    zoom: 1;
+}
+.clearfix::after{
+    content: ".";
+    visibility: hidden;
+    height: 0px;
+    clear: both;
+    display: block;
+}
