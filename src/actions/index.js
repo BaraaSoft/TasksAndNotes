@@ -1,4 +1,7 @@
 import _ from 'lodash';
+import axios from 'axios';
+import types from './type';
+
 export function openModalDetails(callback) {
 
     return {
@@ -15,4 +18,26 @@ export function addNewTask(value) {
         type: 'CREATE_NEW_TASK',
         payload: _.cloneDeep(value)
     }
+}
+
+export function getRandomTasks() {
+    return (dispatch) => {
+        fetchRadnomTasks().then((response) => {
+            dispatch({
+                type: types.GET_RONDOM_TASKS,
+                payload: response.data
+            })
+        })
+    }
+}
+
+function fetchRadnomTasks() {
+    return axios({
+        method: 'get',
+        url: '/api/posts',
+        baseURL: 'http://reduxblog.herokuapp.com',
+        params: {
+            key: 123
+        }
+    })
 }

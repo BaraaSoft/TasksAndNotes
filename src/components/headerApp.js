@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../style/header_post.css';
 import Modal from './modal';
-import { openModalDetails } from '../actions/index'
+import { openModalDetails, getRandomTasks } from '../actions/index'
 import AddPost from './addPost';
-
 
 
 class HeaderPost extends Component {
@@ -12,8 +11,10 @@ class HeaderPost extends Component {
     onContactUsClicked(e) {
         this.props.openModalDetails()
     }
-    componentDidMount() {
 
+    getRandomTasks(e) {
+        e.preventDefault();
+        this.props.getRandomTasks()
     }
 
     render() {
@@ -25,7 +26,7 @@ class HeaderPost extends Component {
                         <AddPost />
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
                             <li><a href="sass.html"></a></li>
-                            <li><a href="badges.html"></a></li>
+                            <li><a className='btn-random' onClick={this.getRandomTasks.bind(this)} href="#">Random</a></li>
                             <li><a onClick={this.onContactUsClicked.bind(this)}>Info</a></li>
                         </ul>
                     </div>
@@ -36,4 +37,4 @@ class HeaderPost extends Component {
     }
 }
 
-export default connect(null, { openModalDetails })(HeaderPost);
+export default connect(null, { openModalDetails, getRandomTasks })(HeaderPost);
