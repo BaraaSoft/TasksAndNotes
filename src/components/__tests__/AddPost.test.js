@@ -8,17 +8,21 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 import reducers from '../../reducers/index';
 
+/* The Root */
+
+import Root from '../../root'
+
 /* Using Enzyme */
 import { shallow, mount } from 'enzyme'
 import AddPost from '../addPost';
 
 let wrapper;
 beforeEach(() => {
-    const createStoreWithMiddleware = applyMiddleware()(createStore);
+
     wrapper = mount(
-        <Provider store={createStoreWithMiddleware(reducers)}>
+        <Root>
             <App />
-        </Provider>
+        </Root>
     );
 });
 

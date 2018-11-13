@@ -6,7 +6,7 @@ class ListPosts extends Component {
     listTasks(tasksList) {
         return tasksList.map((task) => {
             return (
-                <div key={task.title} className="col s12 m7">
+                <div key={task.title} className="card-list-item col s12 m7">
                     <div className="card horizontal">
                         <div className="card-stacked">
                             <div className="card-content">

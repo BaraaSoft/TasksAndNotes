@@ -7,5 +7,4 @@ export default combineReducers({
     modal: interfaceReducer,
     form: formReducer,
     tasksList: tasksReducer
-
 });
