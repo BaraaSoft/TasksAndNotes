@@ -31,6 +31,14 @@ export function getRandomTasks() {
     }
 }
 
+
+export function setChangeAuth(isLoggedIn) {
+    return {
+        type: types.CHANGE_AUTH,
+        payload: isLoggedIn
+    }
+}
+
 function fetchRadnomTasks() {
     return axios({
         method: 'get',
@@ -41,3 +49,5 @@ function fetchRadnomTasks() {
         }
     })
 }
+
+
