@@ -1,2 +1,2 @@
 # TasksAndNotes
-Exploring testing With React and Redux
+Exploring testing with React and Redux by making note taking app.
